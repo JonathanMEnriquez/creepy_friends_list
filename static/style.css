@@ -1,0 +1,14 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#wrapper{
+    background-color: lightblue;
+}
+
+.box_div{
+    background-color: white;
+    padding: 10px;
+    margin-top: 5px;
+}

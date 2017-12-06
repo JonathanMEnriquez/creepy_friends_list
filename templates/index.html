@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Here is creepy list of all my friends</h1>
+        <h5>It's no surprise that the list is so short when I am the type of person who would keep a list of friends</h5>
+        <br>
+        <div class="box_div">
+            {% for friend in all_friends %}
+                <p>ID: {{ friend['id'] }}</p>
+                <p>First Name: {{ friend['first_name'] }}</p>
+                <p>Last Name: {{ friend['last_name'] }}</p>
+                <p>Occupation: {{ friend['occupation'] }}</p>
+                <hr>
+            {% endfor %}
+            <br>
+        </div>
+        <div class="box_div">
+            <h2>Add a Friend</h2>
+            <form action="/process" method="POST">
+                <label for="first_name">First Name: <input type="text" name='first_name' id="first_name"></label>
+                <label for="last_name">Last Name: <input type="text" name="last_name" id="last_name"></label>
+                <label for="last_name">Occupation: <input type="text" name="occupation" id="occupation"></label>
+                <input type="submit" value='Add'>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
